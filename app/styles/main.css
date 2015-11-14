@@ -6,7 +6,8 @@
 }
 
 body {
-  padding: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -28,6 +29,11 @@ body {
   margin-bottom: 0;
   line-height: 40px;
   padding-bottom: 19px;
+}
+
+/* Centralise container */
+.container {
+  margin: 0 auto;
 }
 
 /* Custom page footer */
@@ -61,10 +67,6 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -74,10 +76,28 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+/* Map dimensions */
+#map {
+  height: 480px;
+  width: 100%;
+}
+
+/* Vehicle details formatting */
+.vehicle-details {
+  padding: 14px;
+  border-radius: 6px;
+  background-color: #ddd;
+}
+
+/* Vehicle Marker Popup formatting */
+.leaflet-popup-content {
+  text-align: center;
 }

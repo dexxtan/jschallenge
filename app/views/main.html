@@ -1,9 +1,13 @@
 <div class="jumbotron">
-  <h2>Welcome to smove's JSChallenge!</h2>
+  <h2>Welcome to smove's JSChallenge Answer by dexxtan!</h2>
   <p class="lead">
     Now it's your turn.</br>
-    Blow us away with your awesomeness.
+    Click a marker on the map to start!
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-  <p>ps. go have a look at main.js for the api call</p>
+  <p class="vehicle">
+    Current Vehicles available: {{vehicle.cars_available}}
+	  <br />
+	  Directions: {{vehicle.description}}
+	</p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/">Awesome! <span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
