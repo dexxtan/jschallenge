@@ -90,11 +90,20 @@ body {
   width: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Vehicle details formatting */
 .vehicle-details {
   padding: 14px;
   border-radius: 6px;
   background-color: #ddd;
+}
+
+.vehicle-details ul {
+  list-style: none;
+  text-align: left;
 }
 
 /* Vehicle Marker Popup formatting */

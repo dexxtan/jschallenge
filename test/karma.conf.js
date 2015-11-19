@@ -14,7 +14,7 @@ module.exports = function(config) {
     basePath: '../',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'fixture'],
 
     // list of files / patterns to load in the browser
     files: [
@@ -26,10 +26,19 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/mock/**/*.json',
+      'test/spec/**/*.js',
+      'test/spec/**/*.html'
     ],
 
+    preprocessors: {
+      '**/*.html': ['html2js'],
+      '**/*.json': ['json_fixtures']
+    },
+
+    jsonFixturesPreprocessor: {
+      variableName: '__json__'
+    },
     // list of files / patterns to exclude
     exclude: [
     ],
@@ -52,7 +61,10 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+      'karma-fixture',
+      'karma-html2js-preprocessor',
+      'karma-json-fixtures-preprocessor'
     ],
 
     // Continuous Integration mode

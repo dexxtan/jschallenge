@@ -1,13 +1,25 @@
 <div class="jumbotron">
   <h2>Welcome to smove's JSChallenge Answer by dexxtan!</h2>
   <p class="lead">
-    Now it's your turn.</br>
+    Now it's your turn.<br>
+    Displayed above are markers showing the cars available for booking with the selected time.<br>
+    Booking Length: {{booking.bookingHours}} hours
+    <input type="range" min="0" max="24" ng-model="booking.bookingHours" ng-model-options="{ debounce: 300 }" ng-change="getBookingAvailability()"><br>
+    Booking Day: {{booking.startDay}} days from now
+    <input type="range" min="0" max="30" ng-model="booking.startDay" ng-model-options="{ debounce: 300 }" ng-change="getBookingAvailability()"><br>
+    Booking Hour: {{booking.startHour}} hours from now
+    <input type="range" min="0" max="24" ng-model="booking.startHour" ng-model-options="{ debounce: 300 }" ng-change="getBookingAvailability()"><br>
     Click a marker on the map to start!
   </p>
-  <p class="vehicle">
-    Current Vehicles available: {{vehicle.cars_available}}
-	  <br />
-	  Directions: {{vehicle.description}}
-	</p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Awesome! <span class="glyphicon glyphicon-ok"></span></a></p>
+  <p>
+
+  </p>
+  <div class="vehicle-details ng-class: {'hidden': hideVehicleDetails};">
+    <ul>
+      <li ng-repeat="(key, value) in vehicle">
+        {{key}}: {{value}}
+      </li>
+    </ul>
+    <a class="btn btn-lg btn-success" ng-href="#/">Book Now! <span class="glyphicon glyphicon-ok"></span></a>
+  </div>
 </div>
